@@ -29,5 +29,6 @@ alter table person add  countryTest varchar(22)
 alter table person add  stateTest varchar(245)
 
 --changeset other.dev:5
+
 --rollback ALTER TABLE company DROP COLUMN country;
 alter table company add  countryTest varchar(452)
