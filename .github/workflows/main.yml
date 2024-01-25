@@ -11,8 +11,8 @@ jobs:
           operation: 'update'
           classpath: 'example/changelogs'
           changeLogFile: 'samplechangelog.h2.sql'
-          username: ${{ eFQdEzFpfItrtpPm }}
-          password: ${{ <rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm[}}
-          url: ${{ jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30 }}
+          username: 'eFQdEzFpfItrtpPm'
+          password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
+          url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
 
         
