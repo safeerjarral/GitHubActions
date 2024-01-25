@@ -22,12 +22,12 @@ create table company (
 
 --changeset other.dev:3
 --rollback ALTER TABLE person DROP COLUMN country;
-alter table person add  country_Test varchar(22)
+alter table person add  countryTest varchar(22)
 
 --changeset other.dev:4
 --rollback ALTER TABLE person DROP COLUMN state;
-alter table person add  state_Test varchar(245)
+alter table person add  stateTest varchar(245)
 
 --changeset other.dev:5
 --rollback ALTER TABLE company DROP COLUMN country;
-alter table company add  country_Test varchar(452)
+alter table company add  countryTest varchar(452)
