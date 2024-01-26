@@ -28,7 +28,5 @@ alter table person add  countryTest varchar(22)
 --rollback ALTER TABLE person DROP COLUMN state;
 alter table person add  stateTest varchar(245)
 
---changeset other.dev:5
-
---rollback ALTER TABLE company DROP COLUMN country;
+--changeset safeer ChangeSet Author:saf1
 alter table company add  countryTest varchar(452)
