@@ -26,7 +26,7 @@ jobs:
         with:
           operation: 'update'
           classpath: 'example/changelogs'
-          changeLogFile: 'RollBack.sql'
+          changeLogFile: 'samplechangelog.h2.sql'
           username: ${{ matrix.server.username }}
           password: ${{ matrix.server.password }}
           url: ${{ matrix.server.url }}
