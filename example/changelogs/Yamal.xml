@@ -7,9 +7,16 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
 
 	<changeSet id="1.1.1" author="Usman">
-		<comment>Create the first stored procedure</comment>
+		<comment>
+			<![CDATA[
+			Alter the first stored procedure
+			   ]]>
+		</comment>
+
 		<description>
-			Creates a stored procedure [dbo].[Sp_UsmanTest5] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
+			<![CDATA[
+			Alter a stored procedure [dbo].[Sp_UsmanTest2] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
+			   ]]>
 		</description>
 		<sql>
 			<![CDATA[
@@ -43,9 +50,16 @@
 	<changeSet id="1.1.2" author="Usman">
 		<!-- Create the second stored procedure -->
 
-		<comment>Alter the first stored procedure</comment>
+		<comment>
+			<![CDATA[
+			Alter the first stored procedure
+			   ]]>
+	</comment>
+			
 		<description>
+			<![CDATA[
 			Alter a stored procedure [dbo].[Sp_UsmanTest2] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
+			   ]]>
 		</description>
 		<sql>
 			<![CDATA[
