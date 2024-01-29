@@ -9,11 +9,11 @@ jobs:
       matrix:
         server:
           - name: 'Server1'
-            url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
+            url: '//jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
             username: 'eFQdEzFpfItrtpPm'
             password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
           - name: 'Server2'
-            url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=opportunityActions;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
+            url: '//jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=opportunityActions;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
             username: 'eFQdEzFpfItrtpPm'
             password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
 
