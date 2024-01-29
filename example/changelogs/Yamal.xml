@@ -8,9 +8,9 @@
 
 	<changeSet id="1.1.1" author="Usman" labels="label_SpCreate" context="sp creation">
 		<comment>Test-comment</comment>
-		<description>
+		<descriptions>
 			Creates a stored procedure [dbo].[Sp_UsmanTest2] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
-		</description>
+		</descriptions>
 		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
@@ -43,9 +43,9 @@
 
 	<changeSet id="1.1.2" author="Usman" labels="example-label" context="example-context">
 		<comment>example-comment</comment>
-		<description>
+		<descriptions>
 			Creates a stored procedure [dbo].[Sp_UsmanTest2] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
-		</description>
+		</descriptions>
 		<!-- Create the second stored procedure -->
 		<sql>
 			<![CDATA[
