@@ -7,7 +7,7 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
 
 	<changeSet id="1.1.1" author="Usman" labels="label_SpCreate" context="sp creation">
-		<comment>Test-comment</comment>> 
+		<comment>Test-comment</comment>
 		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
@@ -39,7 +39,7 @@
 
 
 	<changeSet id="1.1.2" author="Usman" labels="example-label" context="example-context">
-		<comment>example-comment</comment>>
+		<comment>example-comment</comment>
 		<!-- Create the second stored procedure -->
 		<sql>
 			<![CDATA[
