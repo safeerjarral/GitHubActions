@@ -1,0 +1,70 @@
+
+
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
+
+	<changeSet id="1" author="safeer">
+		<!-- Create the first stored procedure -->
+		<sql>
+			<![CDATA[
+               Create PROCEDURE [dbo].[Sp_UsmanTest2]
+		AS
+		begin
+		insert into UsmanTest1(PersonID,
+		LastName ,
+		FirstName,
+		Address,
+		City
+		) values (1,'usman','UL haq','Pakistan','LHR')
+		insert into UsmanTest2(PersonID,
+		LastName ,
+		FirstName,
+		Address,
+		City
+		) values (1,'usman','UL haq','Pakistan','LHR')
+
+		SELECT * FROM UsmanTest1
+		SELECT * FROM UsmanTest2
+
+		End;
+            ]]>
+		</sql>
+	</changeSet>
+
+
+
+
+	<changeSet id="2" author="hanif">
+		<!-- Create the second stored procedure -->
+		<sql>
+			<![CDATA[
+              Create PROCEDURE [dbo].[Sp_UsmanTest55]
+AS
+begin
+insert into UsmanTest1(PersonID,
+    LastName ,
+    FirstName,
+    Address,
+    City 
+) values (1,'usman','UL haq','Pakistan','LHR') 
+insert into UsmanTest2(PersonID,
+    LastName ,
+    FirstName,
+    Address,
+    City 
+) values (1,'usman','UL haq','Pakistan','LHR') 
+
+SELECT * FROM UsmanTest1
+SELECT * FROM UsmanTest2
+
+End;
+            ]]>
+		</sql>
+	</changeSet>
+
+
+
+</databaseChangeLog>
