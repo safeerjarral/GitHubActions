@@ -6,18 +6,8 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
 
-	<changeSet id="1.1.1" author="Usman">
-		<comment>
-			<![CDATA[
-			Alter the first stored procedure
-			   ]]>
-		</comment>
-
-		<description>
-			<![CDATA[
-			Alter a stored procedure [dbo].[Sp_UsmanTest2] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
-			   ]]>
-		</description>
+	<changeSet id="1.1.1" author="Usman" description="Create the first stored procedure">>
+		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
          Create PROCEDURE [dbo].[Sp_UsmanTest5]
@@ -47,20 +37,8 @@
 
 
 
-	<changeSet id="1.1.2" author="Usman">
+	<changeSet id="1.1.2" author="Usman" description="Alter the first stored procedure">>
 		<!-- Create the second stored procedure -->
-
-		<comment>
-			<![CDATA[
-			Alter the first stored procedure
-			   ]]>
-	</comment>
-			
-		<description>
-			<![CDATA[
-			Alter a stored procedure [dbo].[Sp_UsmanTest2] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
-			   ]]>
-		</description>
 		<sql>
 			<![CDATA[
               Alter PROCEDURE [dbo].[Sp_UsmanTest5]
