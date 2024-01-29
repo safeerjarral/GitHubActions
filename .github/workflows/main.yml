@@ -9,13 +9,13 @@ jobs:
       matrix:
         server:
           - name: 'Server1'
-            url: '//jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
+            url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
             username: 'eFQdEzFpfItrtpPm'
             password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
           - name: 'Server2'
-            url: '//jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=opportunityActions;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username: 'eFQdEzFpfItrtpPm'
-            password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
+            url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
+            username: 'UslkwfrXBeMTkIed'
+            password: 'TVw]Z[x!E!rp=TRTu]LOnPp2%JOceHES_=$-Rl9V'
 
     steps:
       - name: Checkout code
@@ -26,7 +26,7 @@ jobs:
         with:
           operation: 'update'
           classpath: 'example/changelogs'
-          changeLogFile: 'samplechangelog.h2.sql'
+          changeLogFile: 'Yamal.xml'
           username: ${{ matrix.server.username }}
           password: ${{ matrix.server.password }}
           url: ${{ matrix.server.url }}

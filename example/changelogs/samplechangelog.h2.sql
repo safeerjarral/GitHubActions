@@ -1,8 +1,8 @@
 --liquibase formatted sql
 
---changeset Usman:US1
+--changeset Usman:1.1.1
 --rollback DROP TABLE person;
-create table person (
+create table personEmail (
     id int primary key,
     name varchar(50) not null,
     address1 varchar(50),
@@ -10,7 +10,7 @@ create table person (
     city varchar(30)
 )
 
---changeset Usman:US2
+--changeset Usman:1.1.2
 --rollback DROP TABLE company;
 create table company (
     id int primary key,
@@ -20,12 +20,21 @@ create table company (
     city varchar(30)
 )
 
---changeset Usman:US3
+--changeset Usman:1.1.3
 --rollback ALTER TABLE person DROP COLUMN country;
 alter table person add  countryTest varchar(22)
---changeset Usman:US4
+--changeset Usman:1.1.4
 --rollback ALTER TABLE person DROP COLUMN state;
 alter table person add  stateTest varchar(245)
 
---changeset Usman:US5
+--changeset Usman:1.1.5
 alter table company add  countryTest varchar(452)
+
+--changeset Usman:1.1.6
+
+Create procedure dbo.getpersonEmails
+as
+begin
+
+    select * from personEmail
+End

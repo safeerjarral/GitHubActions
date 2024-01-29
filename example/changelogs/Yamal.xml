@@ -6,11 +6,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
 
-	<changeSet id="1" author="safeer">
+	<changeSet id="1.1.1" author="Usman">
 		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
-               Create PROCEDURE [dbo].[Sp_UsmanTest2]
+         Create PROCEDURE [dbo].[Sp_UsmanTest5]
 		AS
 		begin
 		insert into UsmanTest1(PersonID,
@@ -37,11 +37,11 @@
 
 
 
-	<changeSet id="2" author="hanif">
+	<changeSet id="1.1.2" author="Usman">
 		<!-- Create the second stored procedure -->
 		<sql>
 			<![CDATA[
-              Create PROCEDURE [dbo].[Sp_UsmanTest55]
+              Alter PROCEDURE [dbo].[Sp_UsmanTest5]
 AS
 begin
 insert into UsmanTest1(PersonID,
@@ -58,6 +58,7 @@ insert into UsmanTest2(PersonID,
 ) values (1,'usman','UL haq','Pakistan','LHR') 
 
 SELECT * FROM UsmanTest1
+union
 SELECT * FROM UsmanTest2
 
 End;
