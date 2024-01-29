@@ -10,7 +10,7 @@
 		<comment>Create the first stored procedure</comment>
 		<description>
 			Creates a stored procedure [dbo].[Sp_UsmanTest5] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
-		</description>\
+		</description>
 		<sql>
 			<![CDATA[
          Create PROCEDURE [dbo].[Sp_UsmanTest5]
@@ -46,7 +46,7 @@
 		<comment>Alter the first stored procedure</comment>
 		<description>
 			Alter a stored procedure [dbo].[Sp_UsmanTest2] with sample data insertion into UsmanTest1 and UsmanTest2 tables.
-		</description>\
+		</description>
 		<sql>
 			<![CDATA[
               Alter PROCEDURE [dbo].[Sp_UsmanTest5]
