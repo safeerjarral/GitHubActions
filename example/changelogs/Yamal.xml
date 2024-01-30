@@ -65,9 +65,9 @@ alter table UsmanTest2 add  City varchar(22)
 		
 		insert into UsmanTest2(
 		id,
-		name,
+		Email,
 		City
-		) values (2,'usman2','Lahore')
+		) values (2,'usman@gmail.com','Lahore')
 		
 
 		End;
