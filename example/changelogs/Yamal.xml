@@ -70,6 +70,44 @@ End;
 		</sql>
 	</changeSet>
 
+	<changeSet id="1.1.3" author="Usman" labels="Create Table " context="Table_01">
+		<comment>Ticket No 25:Create Table </comment>
+		<sql>
+			<![CDATA[
+            create table UsmanTestDemo (
+    id int primary key,
+    name varchar(50) not null,
+    address1 varchar(50),
+    address2 varchar(50),
+    city varchar(30)
+)
+            ]]>
+		</sql>
+	</changeSet>
 
+
+	<changeSet id="1.1.4" author="Usman" labels="Alter Table " context="Table_Alter">
+		<comment>Ticket No 26:Alter Table </comment>
+		<sql>
+			<![CDATA[
+alter table UsmanTestDemo add  AlterColoumn varchar(22)
+
+            ]]>
+		</sql>
+	</changeSet>
+
+	<changeSet id="1.1.5" author="Usman" labels="sp_getdata" context="Get Data from UsmanTestDemo ">
+		<comment>Ticket No 255:Get Data from UsmanTestDemo </comment>
+		<sql>
+			<![CDATA[
+                 Alter PROCEDURE [dbo].[Sp_UsmanTestUsmanTestDemo]
+AS
+begin
+SELECT * FROM UsmanTestDemo
+
+End;
+            ]]>
+		</sql>
+	</changeSet>
 
 </databaseChangeLog>

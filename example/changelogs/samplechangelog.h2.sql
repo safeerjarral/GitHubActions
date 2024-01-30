@@ -31,10 +31,3 @@ alter table person add  stateTest varchar(245)
 alter table company add  countryTest varchar(452)
 
 --changeset Usman:1.1.6
-
-Create procedure dbo.getpersonEmails
-as
-begin
-
-    select * from personEmail
-End
