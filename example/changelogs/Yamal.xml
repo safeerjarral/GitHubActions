@@ -82,12 +82,13 @@ alter table UsmanTest2 add  City varchar(22)
 		<sql>
 			<![CDATA[
 			
-			   Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
+		 Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
+ as
+ begin
 	   select * from  UsmanTest1
 	     Union
       select * from  UsmanTest2
-		End;
- 
+		End
 
 	
             ]]>
