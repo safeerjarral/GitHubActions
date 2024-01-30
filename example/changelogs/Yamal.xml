@@ -12,7 +12,7 @@
 			<![CDATA[
             create table UsmanTest1 (
     id int primary key,
-    name varchar(50) 
+    name varchar(50) )
             ]]>
 		</sql>
 	</changeSet>
