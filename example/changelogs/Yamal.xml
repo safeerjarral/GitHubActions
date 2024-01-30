@@ -10,7 +10,8 @@
 		<comment>Ticket No 01:Please Create Table  UsmanTest1</comment>
 		<sql>
 			<![CDATA[
-            create table UsmanTest1 (
+            create table UsmanTest1 
+			(
     id int primary key,
     name varchar(50) )
             ]]>

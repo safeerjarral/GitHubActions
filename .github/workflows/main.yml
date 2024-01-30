@@ -1,6 +1,6 @@
 
 on: [push]
-
+# can be also be change based on access level on git repo
 jobs:
   test-liquibase-action:
     runs-on: ubuntu-latest
