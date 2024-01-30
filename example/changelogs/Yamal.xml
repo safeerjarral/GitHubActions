@@ -6,108 +6,96 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
 
-	<changeSet id="1.1.1" author="Usman" labels="label_SpCreate" context="sp creation">
-		<comment>Ticket No 12 # This is a Test Ticket to Create sp</comment>
+	<changeSet id="1.1.1" author="Usman" labels="Create Table UsmanTest1 " context="This is Created by Usman ul Haq">
+		<comment>Ticket No 01:Please Create Table  UsmanTest1</comment>
+		<sql>
+			<![CDATA[
+            create table UsmanTest1 (
+    id int primary key,
+    name varchar(50) 
+            ]]>
+		</sql>
+	</changeSet>
+	<changeSet id="1.1.2" author="Usman" labels="Create Table UsmanTest2 " context="This is Created by Usman ul Haq">
+		<comment>Ticket No 02:Please Create Table  UsmanTest2</comment>
+		<sql>
+			<![CDATA[
+            create table UsmanTest2 (
+    id int primary key,
+    Email varchar(50) 
+
+)
+            ]]>
+		</sql>
+	</changeSet>
+
+	<changeSet id="1.1.3" author="Usman" labels="Alter Table " context="alter table UsmanTest1 by  Usman ul Haq">
+		<comment>Ticket No 03:Alter Table  UsmanTest1 </comment>
+		<sql>
+			<![CDATA[
+alter table UsmanTest1 add  Address varchar(22)
+
+            ]]>
+		</sql>
+	</changeSet>
+
+	<changeSet id="1.1.4" author="Usman" labels="Alter Table " context="alter table UsmanTest2  by  Usman ul Haq">
+		<comment>Ticket No 04:Alter Table  UsmanTest2 </comment>
+		<sql>
+			<![CDATA[
+alter table UsmanTest2 add  City varchar(22)
+
+            ]]>
+		</sql>
+	</changeSet>
+	<changeSet id="1.1.5" author="Usman" labels="Add Data into  UsmanTest1 and UsmanTest2" context="Data Added By USMAN ul Haq">
+		<comment>Ticket No 05 : Data added into tables </comment>
 
 		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
-         Create PROCEDURE [dbo].[Sp_UsmanTest5]
+         Create PROCEDURE [dbo].[Sp_InsertUsmanTest1AndUsmanTest2]
 		AS
 		begin
-		insert into UsmanTest1(PersonID,
-		LastName ,
-		FirstName,
-		Address,
+		insert into UsmanTest1(
+		id,
+		name,
+		Address
+		) values (1,'usman1','Johar Town')
+		
+		insert into UsmanTest2(
+		id,
+		name,
 		City
-		) values (1,'usman','UL haq','Pakistan','LHR')
-		insert into UsmanTest2(PersonID,
-		LastName ,
-		FirstName,
-		Address,
-		City
-		) values (1,'usman','UL haq','Pakistan','LHR')
-
-		SELECT * FROM UsmanTest1
-		SELECT * FROM UsmanTest2
+		) values (2,'usman2','Lahore')
+		
 
 		End;
             ]]>
 		</sql>
 	</changeSet>
 
+	<changeSet id="1.1.6" author="Usman" labels="Sp creation Get Data  UsmanTest1 and UsmanTest2" context=" Added By USMAN ul Haq">
+		<comment>Ticket No 06 : Get tables Data </comment>
 
-
-
-	<changeSet id="1.1.2" author="Usman" labels="store Procedure" context="sp_alter">
-		<comment>Ticket No 24:Alter Procedure</comment>
-		
-		<!-- Create the second stored procedure -->
+		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
-              Alter PROCEDURE [dbo].[Sp_UsmanTest5]
-AS
-begin
-insert into UsmanTest1(PersonID,
-    LastName ,
-    FirstName,
-    Address,
-    City 
-) values (1,'usman','UL haq','Pakistan','LHR') 
-insert into UsmanTest2(PersonID,
-    LastName ,
-    FirstName,
-    Address,
-    City 
-) values (1,'usman','UL haq','Pakistan','LHR') 
+			
+			   Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
+	   select * from  UsmanTest1
+	     Union
+      select * from  UsmanTest2
+		End;
+ 
 
-SELECT * FROM UsmanTest1
-union
-SELECT * FROM UsmanTest2
-
-End;
-            ]]>
-		</sql>
-	</changeSet>
-
-	<changeSet id="1.1.3" author="Usman" labels="Create Table " context="Table_01">
-		<comment>Ticket No 25:Create Table </comment>
-		<sql>
-			<![CDATA[
-            create table UsmanTestDemo (
-    id int primary key,
-    name varchar(50) not null,
-    address1 varchar(50),
-    address2 varchar(50),
-    city varchar(30)
-)
+	
             ]]>
 		</sql>
 	</changeSet>
 
 
-	<changeSet id="1.1.4" author="Usman" labels="Alter Table " context="Table_Alter">
-		<comment>Ticket No 26:Alter Table </comment>
-		<sql>
-			<![CDATA[
-alter table UsmanTestDemo add  AlterColoumn varchar(22)
 
-            ]]>
-		</sql>
-	</changeSet>
 
-	<changeSet id="1.1.5" author="Usman" labels="sp_getdata" context="Get Data from UsmanTestDemo ">
-		<comment>Ticket No 255:Get Data from UsmanTestDemo </comment>
-		<sql>
-			<![CDATA[
-                 Create PROCEDURE [dbo].[Sp_UsmanTestUsmanTestDemo]
-AS
-begin
-SELECT * FROM UsmanTestDemo
-
-End;
-            ]]>
-		</sql>
-	</changeSet>
 
 </databaseChangeLog>
