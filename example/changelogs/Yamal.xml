@@ -100,7 +100,7 @@ alter table UsmanTestDemo add  AlterColoumn varchar(22)
 		<comment>Ticket No 255:Get Data from UsmanTestDemo </comment>
 		<sql>
 			<![CDATA[
-                 Alter PROCEDURE [dbo].[Sp_UsmanTestUsmanTestDemo]
+                 Create PROCEDURE [dbo].[Sp_UsmanTestUsmanTestDemo]
 AS
 begin
 SELECT * FROM UsmanTestDemo
