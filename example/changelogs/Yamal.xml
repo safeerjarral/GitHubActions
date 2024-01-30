@@ -96,7 +96,19 @@ alter table UsmanTest2 add  City varchar(22)
 		</sql>
 	</changeSet>
 
+	<changeSet id="1.1.7" author="Usman" labels="Sp creation Get Data  UsmanTest1 and UsmanTest2" context=" Added By USMAN ul Haq">
+		<comment>Ticket No 06 : Get tables Data </comment>
 
+		<!-- Create the first stored procedure -->
+		<sql>
+			<![CDATA[
+			
+		 drop PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
+
+	
+            ]]>
+		</sql>
+	</changeSet>
 
 
 
