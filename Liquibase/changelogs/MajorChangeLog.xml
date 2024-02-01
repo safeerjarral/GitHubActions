@@ -117,7 +117,7 @@ alter table UsmanTest2 add  City varchar(22)
 		<sql>
 			<![CDATA[
 			
-		 Create PROCEDURE [dbo].[Sp_InsertUsmanTest1AndUsmanTest2]
+		 Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
 		AS
 		begin
 		insert into UsmanTest1(
