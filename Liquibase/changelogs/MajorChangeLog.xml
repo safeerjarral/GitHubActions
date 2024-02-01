@@ -110,6 +110,36 @@ alter table UsmanTest2 add  City varchar(22)
 		</sql>
 	</changeSet>
 
+	<changeSet id="1.1.8" author="Usman" labels="Sp UsmanTest2" context=" Added By USMAN ul Haq">
+		<comment>Ticket No 06 : Get tables Data </comment>
+
+		<!-- Create the first stored procedure -->
+		<sql>
+			<![CDATA[
+			
+		 Create PROCEDURE [dbo].[Sp_InsertUsmanTest1AndUsmanTest2]
+		AS
+		begin
+		insert into UsmanTest1(
+		id,
+		name,
+		Address
+		) values (1,'usman1','Johar Town')
+		
+		insert into UsmanTest2(
+		id,
+		Email,
+		City
+		) values (2,'usman@gmail.com','Lahore')
+		
+
+		End;
+
+	
+            ]]>
+		</sql>
+	</changeSet>
+
 
 
 </databaseChangeLog>
