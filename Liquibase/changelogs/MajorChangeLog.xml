@@ -89,7 +89,7 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
         as
        begin
 	   select * from  Liq_EmployeeCity
-        select * from  Liq_Employee
+      select * from  Liq_Employee
 		End
 
 	
@@ -97,16 +97,16 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
 		</sql>
 	</changeSet>
 
-	<!--<changeSet id="1.1.7" author="Usman" labels="Sp creation Get Data  UsmanTest1 and UsmanTest2" context=" Added By USMAN ul Haq">
+	<changeSet id="1.1.7" author="Usman" labels="Sp creation Get Data  UsmanTest1 and UsmanTest2" context=" Added By USMAN ul Haq">
 		<comment>Ticket No 06 : Get tables Data </comment>
 
-		--><!-- Create the first stored procedure --><!--
+		 Create the first stored procedure 
 		<sql>
 			<![CDATA[
 			
 		 Alter PROCEDURE [dbo].[Sp_Liq_EmployeeData]
- as
- begin
+      as
+      begin
 	   select * from  Liq_EmployeeCity
         
 		End
@@ -114,7 +114,7 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
 	
             ]]>
 		</sql>
-	</changeSet>-->
+	</changeSet>
 	
 
 
