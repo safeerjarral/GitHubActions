@@ -89,7 +89,6 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
  as
  begin
 	   select * from  Liq_EmployeeCity
-	     Union
       select * from  Liq_Employee
 		End
 
