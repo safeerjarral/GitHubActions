@@ -117,23 +117,14 @@ alter table UsmanTest2 add  City varchar(22)
 		<sql>
 			<![CDATA[
 			
-		 Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
-		AS
-		begin
-		insert into UsmanTest1(
-		id,
-		name,
-		Address
-		) values (1,'usman1','Johar Town')
-		
-		insert into UsmanTest2(
-		id,
-		Email,
-		City
-		) values (2,'usman@gmail.com','Lahore')
-		
+		  Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
+ as
+ begin
+	   select * from  UsmanTest1
+	     Union
+      select * from  UsmanTest2
+		End
 
-		End;
 
 	
             ]]>
