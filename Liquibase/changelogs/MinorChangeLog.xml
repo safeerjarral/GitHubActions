@@ -6,89 +6,32 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
 
-	<changeSet id="1.1.1" author="Usman" labels="Create Table UsmanTest1 " context="This is Created by Usman ul Haq">
-		<comment>Ticket No 01:Please Create Table  UsmanTest1</comment>
+	<changeSet id="1.1.5" author="Usman" labels="Add Data into Liq_MinorRelease_Person" context="Data Added By USMAN ul Haq">
+		<comment>Ticket No 07 : Data added into tables </comment>
+
+		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
-            create table UsmanTest1 
+        
+		 create table Liq_MinorRelease_Person 
 			(
     id int primary key,
     name varchar(50) )
             ]]>
 		</sql>
 	</changeSet>
-	<changeSet id="1.1.2" author="Usman" labels="Create Table UsmanTest2 " context="This is Created by Usman ul Haq">
-		<comment>Ticket No 02:Please Create Table  UsmanTest2</comment>
-		<sql>
-			<![CDATA[
-            create table UsmanTest2 (
-    id int primary key,
-    Email varchar(50) 
-
-)
-            ]]>
-		</sql>
-	</changeSet>
-
-	<changeSet id="1.1.3" author="Usman" labels="Alter Table " context="alter table UsmanTest1 by  Usman ul Haq">
-		<comment>Ticket No 03:Alter Table  UsmanTest1 </comment>
-		<sql>
-			<![CDATA[
-alter table UsmanTest1 add  Address varchar(22)
-
-            ]]>
-		</sql>
-	</changeSet>
-
-	<changeSet id="1.1.4" author="Usman" labels="Alter Table " context="alter table UsmanTest2  by  Usman ul Haq">
-		<comment>Ticket No 04:Alter Table  UsmanTest2 </comment>
-		<sql>
-			<![CDATA[
-alter table UsmanTest2 add  City varchar(22)
-
-            ]]>
-		</sql>
-	</changeSet>
-	<changeSet id="1.1.5" author="Usman" labels="Add Data into  UsmanTest1 and UsmanTest2" context="Data Added By USMAN ul Haq">
-		<comment>Ticket No 05 : Data added into tables </comment>
-
-		<!-- Create the first stored procedure -->
-		<sql>
-			<![CDATA[
-         Create PROCEDURE [dbo].[Sp_InsertUsmanTest1AndUsmanTest2]
-		AS
-		begin
-		insert into UsmanTest1(
-		id,
-		name,
-		Address
-		) values (1,'usman1','Johar Town')
-		
-		insert into UsmanTest2(
-		id,
-		Email,
-		City
-		) values (2,'usman@gmail.com','Lahore')
-		
-
-		End;
-            ]]>
-		</sql>
-	</changeSet>
 
 	<changeSet id="1.1.6" author="Usman" labels="Sp creation Get Data  UsmanTest1 and UsmanTest2" context=" Added By USMAN ul Haq">
-		<comment>Ticket No 06 : Get tables Data </comment>
+		<comment>Ticket No 08 : Get tables Data </comment>
 
 		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
 			
-		 Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
+		 Create PROCEDURE [dbo].[Sp_GetLiq_MinorRelease_Person]
  as
  begin
-	   select * from  UsmanTest1
-	     Union
-      select * from  UsmanTest2
+	   select * from  Liq_MinorRelease_Person
 		End
 
 	
