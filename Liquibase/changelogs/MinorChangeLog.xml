@@ -10,7 +10,7 @@
 		<comment>Ticket No 01:Please Create Table  UsmanTest1</comment>
 		<sql>
 			<![CDATA[
-            create table Liq_Employee 
+            create table UsmanTest1 
 			(
     id int primary key,
     name varchar(50) )
@@ -21,10 +21,9 @@
 		<comment>Ticket No 02:Please Create Table  UsmanTest2</comment>
 		<sql>
 			<![CDATA[
-            create table Liq_EmployeeCity (
+            create table UsmanTest2 (
     id int primary key,
-    emplyeeId varchar(50) ,
-	   employeeCity varchar(50) 
+    Email varchar(50) 
 
 )
             ]]>
@@ -35,7 +34,7 @@
 		<comment>Ticket No 03:Alter Table  UsmanTest1 </comment>
 		<sql>
 			<![CDATA[
-alter table Liq_Employee add  Address varchar(22)
+alter table UsmanTest1 add  Address varchar(22)
 
             ]]>
 		</sql>
@@ -45,7 +44,7 @@ alter table Liq_Employee add  Address varchar(22)
 		<comment>Ticket No 04:Alter Table  UsmanTest2 </comment>
 		<sql>
 			<![CDATA[
-alter table Liq_EmployeeCity add  CityCode varchar(22)
+alter table UsmanTest2 add  City varchar(22)
 
             ]]>
 		</sql>
@@ -56,21 +55,20 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
 		<!-- Create the first stored procedure -->
 		<sql>
 			<![CDATA[
-         Create PROCEDURE [dbo].[Sp_InsertLiq_Employee]
+         Create PROCEDURE [dbo].[Sp_InsertUsmanTest1AndUsmanTest2]
 		AS
 		begin
-		insert into Liq_Employee(
+		insert into UsmanTest1(
 		id,
 		name,
 		Address
 		) values (1,'usman1','Johar Town')
 		
-		insert into Liq_EmployeeCity(
+		insert into UsmanTest2(
 		id,
-		emplyeeId,
-		employeeCity,
-		CityCode
-		) values (2,'1','Lahore','PO-O64')
+		Email,
+		City
+		) values (2,'usman@gmail.com','Lahore')
 		
 
 		End;
@@ -85,12 +83,12 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
 		<sql>
 			<![CDATA[
 			
-		 Create PROCEDURE [dbo].[Sp_Liq_EmployeeData]
+		 Create PROCEDURE [dbo].[Sp_GetUsmanTest1AndUsmanTest2]
  as
  begin
-	   select * from  Liq_EmployeeCity
+	   select * from  UsmanTest1
 	     Union
-      select * from  Liq_Employee
+      select * from  UsmanTest2
 		End
 
 	
