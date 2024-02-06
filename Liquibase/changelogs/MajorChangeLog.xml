@@ -93,7 +93,7 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
       select * from  Liq_Employee
 		End
 
-	
+
             ]]>
 		</sql>
 	</changeSet>
