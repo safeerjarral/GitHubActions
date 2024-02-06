@@ -1,6 +1,8 @@
+on:
+  push:
+    branches:
+      - develop
 
-on: [push]
-# can be also be change based on access level on git repo
 jobs:
   test-liquibase-action:
     runs-on: ubuntu-latest
@@ -8,7 +10,7 @@ jobs:
     strategy:
       matrix:
         server:
-          - name: ' orrvil01dev Server'
+          - name: 'orrvil01dev Server'
             url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
             username: 'eFQdEzFpfItrtpPm'
             password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
@@ -30,6 +32,38 @@ jobs:
           username: ${{ matrix.server.username }}
           password: ${{ matrix.server.password }}
           url: ${{ matrix.server.url }}
+
+#on: [push]
+## can be also be change based on access level on git repo
+#jobs:
+#  test-liquibase-action:
+#    runs-on: ubuntu-latest
+#    name: Test Liquibase Action
+#    strategy:
+#      matrix:
+#        server:
+#          - name: ' orrvil01dev Server'
+#            url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
+#            username: 'eFQdEzFpfItrtpPm'
+#            password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
+#          - name: 'orrvil01test Server2'
+#            url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
+#            username: 'UslkwfrXBeMTkIed'
+#            password: 'TVw]Z[x!E!rp=TRTu]LOnPp2%JOceHES_=$-Rl9V'
+
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v2
+
+#      - name: Test Liquibase Action
+#        uses: liquibase/liquibase-github-action@v2
+#        with:
+#          operation: 'update'
+#          classpath: 'Liquibase/changelogs'
+#          changeLogFile: 'MajorChangeLog.xml'
+#          username: ${{ matrix.server.username }}
+#          password: ${{ matrix.server.password }}
+#          url: ${{ matrix.server.url }}
 
 
 #on: [push]
