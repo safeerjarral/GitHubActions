@@ -74,6 +74,7 @@ alter table Liq_EmployeeCity add  CityCode varchar(22)
 		
 
 		End;
+
             ]]>
 		</sql>
 	</changeSet>
