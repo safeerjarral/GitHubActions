@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\.github",
-    "\\example",
-    "\\extra"
+    "\\Liquibase",
+    "\\Liquibase\\changelogs"
   ],
-  "SelectedNode": "\\example\\changelogs",
+  "SelectedNode": "\\Liquibase\\changelogs\\MajorChangeLog.xml",
   "PreviewInSolutionExplorer": false
 }
