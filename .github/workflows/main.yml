@@ -12,12 +12,12 @@ jobs:
         server:
           - name: 'orrvil01dev Server'
             url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username:  ${{DB_USERNAME_ORRVIL01DEV}}
-            password: ${{ DB_Password_DB_USERNAME_ORRVIL01DEV}}
+            username:  ${{`DB_USERNAME_ORRVIL01DEV`}}
+            password: ${{ `DB_Password_DB_USERNAME_ORRVIL01DEV`}}
           - name: 'orrvil01test Server2'
             url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username:  ${{DB_USERNAME_ORRVIL01TEST}}
-            password: ${{DB_Password_ORRVIL01TEST}}
+            username:  ${{`DB_USERNAME_ORRVIL01TEST`}}
+            password: ${{`DB_Password_ORRVIL01TEST`}}
 
     steps:
       - name: Checkout code
