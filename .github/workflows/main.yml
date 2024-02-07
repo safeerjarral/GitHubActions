@@ -2,7 +2,6 @@ on:
   push:
     branches:
       - develop
-
 jobs:
   test-liquibase-action:
     runs-on: ubuntu-latest
@@ -10,35 +9,29 @@ jobs:
     strategy:
       matrix:
         server:
-          - name: 'orrvil01dev Server'
+          - name: ' orrvil01dev Server'
             url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            DB_USERNAME: ${{secrets.DB_USERNAME_ORRVIL01DEV}}
-            DB_PASSWORD: ${{secrets.DB_PASSWORD_ORRVIL01DEV}}
-          #- name: 'orrvil01test Server2'
-          #  url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-          #  DB_USERNAME: ${{DB_USERNAME_ORRVIL01TEST}}
-          #  DB_PASSWORD: ${{DB_PASSWORD_ORRVIL01TEST}}
+            username:  ${{secrets.DB_USERNAME_ORRVIL01DEV}}
+            password:  ${{secrets.DB_PASSWORD_ORRVIL01DEV}}
 
     steps:
+      - name: run server User Name1
+        run: echo  "run on server is ${{secrets.DB_USERNAME_ORRVIL01DEV}}"
+      - name: run server DB Name2
+        run: echo  "run on server is ${{secrets.DB_PASSWORD_ORRVIL01DEV}}"
+
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Show secrets
-        run: |
-          echo "DB_USERNAME: ${{secrets.DB_USERNAME_ORRVIL01DEV}}"
-          echo "DB_PASSWORD: ${{secrets.DB_PASSWORD_ORRVIL01DEV}}"
-          #echo "DB_USERNAME: ${{DB_USERNAME_ORRVIL01TEST}}"
-          #echo "DB_PASSWORD: ${{DB_PASSWORD_ORRVIL01TEST}}"
 
       - name: Test Liquibase Action
         uses: liquibase/liquibase-github-action@v2
         with:
           operation: 'update'
           classpath: 'Liquibase/changelogs'
-          changeLogFile: 'MinorChangeLog.xml'
-          username: ${{matrix.server.DB_USERNAME}}
-          password: ${{matrix.server.DB_PASSWORD}}
-          url: ${{matrix.server.url}}
+          changeLogFile: 'MajorChangeLog.xml'
+          username: ${{ matrix.server.username }}
+          password: ${{ matrix.server.password }}
+          url: ${{ matrix.server.url }}
 
 #on: [push]
 ## can be also be change based on access level on git repo
