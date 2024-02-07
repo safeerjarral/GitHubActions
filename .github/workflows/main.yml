@@ -26,9 +26,9 @@ jobs:
       - name: Show secrets
         run: |
           echo "DB_USERNAME: ${{secrets.DB_USERNAME_ORRVIL01DEV}}"
-          echo "DB_PASSWORD: ${secrets.DB_PASSWORD_DB_USERNAME_ORRVIL01DEV}}"
-          echo "DB_USERNAME: ${secrets.{DB_USERNAME_ORRVIL01TEST}}"
-          echo "DB_PASSWORD: ${secrets.{DB_PASSWORD_ORRVIL01TEST}}"
+          echo "DB_PASSWORD: ${{secrets.DB_PASSWORD_DB_USERNAME_ORRVIL01DEV}}"
+          echo "DB_USERNAME: ${{secrets.DB_USERNAME_ORRVIL01TEST}}"
+          echo "DB_PASSWORD: ${{secrets.DB_PASSWORD_ORRVIL01TEST}}"
 
       - name: Test Liquibase Action
         uses: liquibase/liquibase-github-action@v2
