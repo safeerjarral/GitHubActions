@@ -16,8 +16,8 @@ jobs:
             DB_PASSWORD: ${{ secrets.DB_PASSWORD_DB_USERNAME_ORRVIL01DEV }}
           - name: 'orrvil01test Server2'
             url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            DB_USERNAME: ${{ secrets.DB_USERNAME_ORRVIL01TEST }}
-            DB_PASSWORD: ${{ secrets.DB_PASSWORD_ORRVIL01TEST }}
+            DB_USERNAME: ${ `secrets.DB_USERNAME_ORRVIL01TEST` }
+            DB_PASSWORD: ${{ `secrets.DB_PASSWORD_ORRVIL01TEST` }}
 
     steps:
       - name: Checkout code
@@ -29,6 +29,6 @@ jobs:
           operation: 'update'
           classpath: 'Liquibase/changelogs'
           changeLogFile: 'MinorChangeLog.xml'
-          username: ${{ matrix.server.DB_USERNAME }}
-          password: ${{ matrix.server.DB_PASSWORD }}
+          username: ${{ `matrix.server.DB_USERNAME` }}
+          password: ${{ `matrix.server.DB_PASSWORD` }}
           url: ${{ matrix.server.url }}
