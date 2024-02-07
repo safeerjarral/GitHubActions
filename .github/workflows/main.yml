@@ -12,12 +12,12 @@ jobs:
         server:
           - name: 'orrvil01dev Server'
             url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username:  ${{`DB_USERNAME_ORRVIL01DEV`}}
-            password: ${{ `DB_Password_DB_USERNAME_ORRVIL01DEV`}}
+            DB_USERNAME: ${{ secrets.DB_USERNAME_ORRVIL01DEV }}
+            DB_PASSWORD: ${{ secrets.DB_PASSWORD_DB_USERNAME_ORRVIL01DEV }}
           - name: 'orrvil01test Server2'
             url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username:  ${{`DB_USERNAME_ORRVIL01TEST`}}
-            password: ${{`DB_Password_ORRVIL01TEST`}}
+            DB_USERNAME: ${{ secrets.DB_USERNAME_ORRVIL01TEST }}
+            DB_PASSWORD: ${{ secrets.DB_PASSWORD_ORRVIL01TEST }}
 
     steps:
       - name: Checkout code
@@ -29,59 +29,6 @@ jobs:
           operation: 'update'
           classpath: 'Liquibase/changelogs'
           changeLogFile: 'MinorChangeLog.xml'
-          username: $`{{ matrix.server.username }}`
-          password: ${{ matrix.server.password }}
+          username: ${{ matrix.server.DB_USERNAME }}
+          password: ${{ matrix.server.DB_PASSWORD }}
           url: ${{ matrix.server.url }}
-
-#on: [push]
-## can be also be change based on access level on git repo
-#jobs:
-#  test-liquibase-action:
-#    runs-on: ubuntu-latest
-#    name: Test Liquibase Action
-#    strategy:
-#      matrix:
-#        server:
-#          - name: ' orrvil01dev Server'
-#            url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-#            username: 'eFQdEzFpfItrtpPm'
-#            password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
-#          - name: 'orrvil01test Server2'
-#            url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-#            username: 'UslkwfrXBeMTkIed'
-#            password: 'TVw]Z[x!E!rp=TRTu]LOnPp2%JOceHES_=$-Rl9V'
-
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v2
-
-#      - name: Test Liquibase Action
-#        uses: liquibase/liquibase-github-action@v2
-#        with:
-#          operation: 'update'
-#          classpath: 'Liquibase/changelogs'
-#          changeLogFile: 'MajorChangeLog.xml'
-#          username: ${{ matrix.server.username }}
-#          password: ${{ matrix.server.password }}
-#          url: ${{ matrix.server.url }}
-
-
-#on: [push]
-
-#jobs:
-#  test-liquibase-action:
-#    runs-on: ubuntu-latest
-#    name: Test Liquibase Action
-
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: liquibase/liquibase-github-action@v2
-#        with:
-#          operation: 'update'
-#          classpath: 'example/changelogs'
-#          changeLogFile: 'samplechangelog.h2.sql'
-#          username: 'eFQdEzFpfItrtpPm'
-#          password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
-#          url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-
-        
