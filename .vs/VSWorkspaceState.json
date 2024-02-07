@@ -5,6 +5,6 @@
     "\\Liquibase",
     "\\Liquibase\\changelogs"
   ],
-  "SelectedNode": "\\Liquibase\\changelogs\\MajorChangeLog.xml",
+  "SelectedNode": "\\Liquibase\\changelogs\\RollBack.sql",
   "PreviewInSolutionExplorer": false
 }
