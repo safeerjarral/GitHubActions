@@ -12,12 +12,12 @@ jobs:
         server:
           - name: 'orrvil01dev Server'
             url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username: 'eFQdEzFpfItrtpPm'
-            password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
+            username:  ${{DB_USERNAME_orrvil01dev }}
+            password: ${{ DB_Password_orrvil01dev}}
           - name: 'orrvil01test Server2'
             url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username: 'UslkwfrXBeMTkIed'
-            password: 'TVw]Z[x!E!rp=TRTu]LOnPp2%JOceHES_=$-Rl9V'
+            username:  ${{DB_USERNAME_orrvil01test }}
+            password: ${{ DB_Password_orrvil01test}}
 
     steps:
       - name: Checkout code
@@ -28,7 +28,7 @@ jobs:
         with:
           operation: 'update'
           classpath: 'Liquibase/changelogs'
-          changeLogFile: 'MajorChangeLog.xml'
+          changeLogFile: 'MinorChangeLog.xml'
           username: ${{ matrix.server.username }}
           password: ${{ matrix.server.password }}
           url: ${{ matrix.server.url }}
