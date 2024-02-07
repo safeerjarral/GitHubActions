@@ -11,14 +11,19 @@ jobs:
         server:
           - name: ' orrvil01dev Server'
             url: 'jdbc:sqlserver://c60dataorrvil01dev.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username: 'eFQdEzFpfItrtpPm'
-            password: '<rpbuMm8dK7=zgvQcSOT9Ceg(mu:Tx:ZV#o=>Sm['
-          - name: 'orrvil01test Server2'
-            url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
-            username: 'UslkwfrXBeMTkIed'
-            password: 'TVw]Z[x!E!rp=TRTu]LOnPp2%JOceHES_=$-Rl9V'
+            username:  ${{secrets.DB_USERNAME_ORRVIL01DEV}}
+            password:  ${{secrets.DB_PASSWORD_ORRVIL01DEV}}
+          #- name: 'orrvil01test Server2'
+          #  url: 'jdbc:sqlserver://c60dataorrvil01test.database.windows.net:1433;database=analytics;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30'
+          #  username: 'UslkwfrXBeMTkIed'
+          #  password: 'TVw]Z[x!E!rp=TRTu]LOnPp2%JOceHES_=$-Rl9V'
 
     steps:
+      - name: run server User Name1
+        run: echo  "run on server is ${{secrets.DB_USERNAME_ORRVIL01DEV}}"
+      - name: run server DB Name2
+        run: echo  "run on server is ${{secrets.DB_PASSWORD_ORRVIL01DEV}}"
+
       - name: Checkout code
         uses: actions/checkout@v2
 
